@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(230, 230, 230);
+}
+
+.wrapper {
+    background-color: rgb(255, 255, 255);
+    width: 770px;
+    color: rgb(0, 0, 0);
+    padding: 50px 20px;
+    font-size: 20px;
+    margin: 0 auto;
+    
+}
+
+img{
+    width: 100%;
+    margin-top: 20px;
+}
+
+p{
+    margin: 20px 0px;
+}
+
+h1{
+    font-size: 30px;
+}
