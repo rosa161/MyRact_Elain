@@ -1,0 +1,48 @@
+
+import Card from '../components/Card'
+import '../css/App0806-1.css'
+
+const App = () => {
+    const arrPhotos = [
+        {
+            imgURL: 'https://images.unsplash.com/photo-1547955922-85912e223015?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: '貓咪',
+            desc: "可愛貓咪在樓梯上",
+            btnName: '圖片來源',
+            btnURL: 'https://images.unsplash.com/photo-1547955922-85912e223015?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        },
+        {
+            imgURL: 'https://images.unsplash.com/photo-1581898262339-10bac03c5818?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: '可愛貓咪',
+            desc: '喵喵喵喵喵',
+            btnName: '圖片來源',
+            btnURL: 'https://images.unsplash.com/photo-1581898262339-10bac03c5818?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        },
+        {
+            imgURL: 'https://images.unsplash.com/photo-1572252821143-035a024857ac?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: '可愛睡覺貓咪',
+            desc: '呼嚕呼嚕呼嚕嚕',
+            btnName: '圖片來源',
+            btnURL: 'https://images.unsplash.com/photo-1572252821143-035a024857ac?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        },
+        {
+            imgURL: 'https://images.unsplash.com/photo-1580784355694-0d5295dcc007?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            title: '可愛戶外睡覺',
+            desc: '齁齁齁齁齁齁齁齁',
+            btnName: '圖片來源',
+            btnURL: 'https://images.unsplash.com/photo-1580784355694-0d5295dcc007?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        }
+    ]
+
+    return (
+    <>
+      <div className="container">
+        {arrPhotos.map((item, index) => (
+          <Card key={index} {...item} />
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default App;

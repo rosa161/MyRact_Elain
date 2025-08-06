@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.card{
+    width: 250px;
+    height: center;
+    border: 1px solid rgb(175, 150, 132);
+    border-radius: 20px;
+    margin: 50px 10px;
+    padding: 10px;
+    background-color: rgb(255, 252, 247);
+    transition: all 0.5s;
+
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0px 18px rgba(87, 87, 87, 0.3);
+}
+
+img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card-title{
+    font-size: 24px;
+    padding-bottom: 10px;
+    /* border: 1px solid red; */
+}
+
+.btn{
+    color: white;
+    text-decoration: none;
+    background-color: #57462e ;
+    padding: 10px ;
+    border-radius: 10px;
+    display: block; /*超連結原本是行內元素, 所以用display轉成區塊元素, 才可以設定寬高*/
+    text-align: center;
+}
+
+.card-text{
+    margin-bottom: 20px;
+}
+
+.card-body{
+padding: 10px 20px;
+/* border: 1px solid rgb(172, 172, 172); */
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
