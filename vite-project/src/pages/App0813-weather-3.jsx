@@ -50,8 +50,14 @@ const App = () => {
         })();
     }, []);
 
+    // 卡片內容
+    const CardBody = ({city,item,index})=>{
+
+    }
+
     // 卡片元件
-    function Card({city}) {
+    // function Card({city}) {
+    function Card({title, wx, pop }) {
         return(
             <div>
                                 {/* 取得縣市陣列跑迴圈 */}
@@ -142,10 +148,11 @@ const App = () => {
             <h2>三十六小時天氣預報</h2>
             <div className="cards">
                 {
-                    citys.map((city) => {
+                    citys.map((city, index) => {
                         return (
                             // 呼叫元件(習慣字首都大寫=>Card)
-                            <Card city={city} key={city.locationName}/>
+                            // <Card city={city} key={city.locationName}/>
+                            <Card key={city.locationName} title={city.locationName} wx={city.weatherElement[0]} pop={city.weatherElement[4]}/>
                         )
                     })
                 }
