@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 文字方塊 -->
+    <input type="text" id="inputKeyin">
+    <script>
+        let input = document.querySelector('#inputKeyin')
+        // console.dir(MyInput);
+        // chage事件=>內容異動後, 離開時才會觸發
+        MyInput.addEventListener('change', (e) => {
+            console.log(e.target.value);
+        })
+    // 想要及時觸發內容異動時, 要用keyDown, keyPress, keyUp
+    MyInput.addEventListener('ketup',(e)=>{
+        console.log(e,target,value)
+    })
+
+
+
+
+    </script>
+    <!-- 點擊次數 -->
+    <!-- <button id="btn1">點擊次數：</button>
+    <script>
+        let btn1 = document.querySelector('#btn1');
+        let count = 0;
+        btn1.addEventListener('click', () => {
+            console.log(count++);
+        }) -->
+    </script>
+</body>
+
+</html>
