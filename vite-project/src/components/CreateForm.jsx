@@ -18,7 +18,7 @@ const CreateForm = ({ todos, setTodos }) => {
         if (content.length === 0) {
             alert('沒有輸入待辦內容！請重新輸入');
         } else {
-            setTodos([...todos, { content: content, id: Math.random(), isCompleted:false }]);
+            setTodos([...todos, { content: content, id: Math.random(), isCompleted:false, isEdit:false }]);
             setContent('');
         }
     }
