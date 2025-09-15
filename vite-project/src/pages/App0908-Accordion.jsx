@@ -1,0 +1,100 @@
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
+import { FaMinusCircle, FaPlusCircle } from "react-icons/fa"
+import { div } from 'motion/react-client'
+
+export const App = () => {
+    // 作用中的變數
+    const [activeQuestion, setActiveQuestion] = useState(null)
+
+    // FAQ 問題資料
+    const questions = [
+        {
+            id: 1,
+            question: "問題1",
+            answer: "答案1",
+        },
+        {
+            id: 2,
+            question: "問題2",
+            answer: "答案2",
+        },
+        {
+            id: 3,
+            question: "問題3",
+            answer: "答案3",
+        }
+    ]
+
+    return (
+        <div className='wrap' style={{
+            maxWidth: '100vw',
+            height: '100vh',
+            backgroundColor: '#333',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: '18px',
+        }}>
+            <div className='accordion' style={{
+                width: '80%',
+                margin: 'auto',
+                maxWidth: '1400px',
+                backgroundColor: '#ccc',
+                padding: '8px',
+                borderRadius: '5px',
+            }}>
+                <h2 style={{
+                    textAlign: 'center',
+                    marginBottom: '6px',
+
+                }}>FAQ標題</h2>
+                {
+                    // 帶出陣列中的資料
+                    questions.map((q) => {
+                        return (
+                            <div key={q.id} style={{ marginBottom: "8px" }}>
+                                {/* QA按鈕 */}
+                                <button
+                                    style={{
+                                        width: '100%',
+                                        textAlign: 'left',
+                                        border: 'none',
+                                        outline: 'none',
+                                        backgroundColor: '#eee',
+                                        padding: '5px',
+                                        display: 'flex',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center',
+                                    }}
+                                    onClick={() => { setActiveQuestion(activeQuestion === q.id ? null : q.id) }}
+                                >
+                                    {/* 帶出題目 */}
+                                    {q.question}
+                                    {/* 加號減號ICON */}
+                                    {activeQuestion === q.id ? <FaMinusCircle /> : <FaPlusCircle />}
+                                </button>
+                                {/* 摺疊動畫 */}
+                                <AnimatePresence>
+                                    {activeQuestion === q.id && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: 'auto' }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            style={{ marginTop: "5px", color: "#333", fontSize: "16px", }}
+                                        >
+                                            {/* 答案 */}
+                                            {q.answer}
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        </div>
+    )
+}
+
+export default App
